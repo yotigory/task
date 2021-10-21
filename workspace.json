@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "task": "apps/task",
+    "task-e2e": "apps/task-e2e"
+  }
+}
