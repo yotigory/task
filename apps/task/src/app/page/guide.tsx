@@ -25,7 +25,7 @@ export const Guide = () => {
           title="Guides"
           width="1134"
         />
-        <ContentCardColumn column={3} title="">
+				<ContentCardColumn column={3} title="">
           <ContentCard
             href="https://getshifter.io"
             linkText="Explore Shifter docs"
