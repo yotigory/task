@@ -72,7 +72,7 @@ export const Login = () => {
               <h2 className="text-primary font-weight-bold">
                 Faster Build Times
               </h2>
-              <p className="mt-4 mb-5 font-weight-bold">
+              <p className="mt-4 mb-5 h5">
                 Customize Shifter settings for up to 70% faster build times.
               </p>
               <p className="font-weight-bold">
