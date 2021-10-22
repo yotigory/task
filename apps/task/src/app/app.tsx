@@ -7,7 +7,7 @@ export const App = () => {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Login} />
+					<Route exact path="/" component={Login}/>
           <Route exact path="/guide" component={Guide} />
         </Switch>
       </BrowserRouter>

@@ -82,8 +82,10 @@ export const Login = () => {
               </p>
             </Col>
           </Row>
-        </Container>
+				</Container>
+				<div className="fixed-bottom">
         <Footer></Footer>
+				</div>
       </Layouts>
     </>
   );
