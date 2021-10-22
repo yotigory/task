@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, Row, Col, Button } from 'reactstrap';
 import { FaUser, FaLock } from 'react-icons/fa';
 import {
@@ -11,6 +12,15 @@ import {
 import { Footer } from '../component/footer';
 
 export const Login = () => {
+	const [check, setCheck] = useState(false);
+	const [form, setForm] = useState({ password: '', email: ''});
+	const handleChange = (input:any) => (e:any) => {
+		setForm({...form, [input] : e.target.value});
+	};
+	const checkChange = () => (e:any) => {
+		setCheck(e.target.checked);
+};
+
   return (
     <>
       <Layouts variant="login">
@@ -25,38 +35,38 @@ export const Login = () => {
                   title="Log in"
                   variant="signup"
                 />
-                <FormField
-                  errorMessage=""
-                  icon={<FaUser className="d-block" />}
-                  id="email"
-                  label="Username or email"
-                  onChange={function noRefCheck() {}}
-                  type="text"
-                  value=""
+								<FormField
+									errorMessage=""
+									icon={<FaUser className="d-block" />}
+									id="email"
+									label="Username or email"
+									onChange={handleChange('email')}
+									type="text"
+									value={ form.email }
                 />
                 <FormField
-                  errorMessage=""
-                  icon={<FaLock className="d-block" />}
-                  id="password"
-                  label="password"
-                  onChange={function noRefCheck() {}}
-                  type="password"
-                  value=""
+									errorMessage=""
+									icon={<FaLock className="d-block" />}
+									id="password"
+									label="password"
+									onChange={handleChange('password')}
+									type="password"
+									value={ form.password }
                 />
                 <Checkbox
                   id="remember"
                   label="Remember me"
-                  onChange={function noRefCheck() {}}
-                />
+									onChange={checkChange()}
+									value={ check }
+								/>
                 <Button
                   className="mt-4 mb-5"
                   block
-                  disabled
                   fontWeight="bold"
                   textAlign="center"
                 >
                   Log in
-                </Button>
+								</Button>
                 <p>
                   <a href="">Forgot Password?</a>
                 </p>
