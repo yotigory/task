@@ -11,7 +11,7 @@ import titleimg from '../img/guide-banner.png';
 import bgimg from '../img/bg.png';
 import { Header } from '../component/header';
 import { Footer } from '../component/footer';
-import { FaPlay, FaWrench,FaComment } from 'react-icons/fa';
+import { FaComment } from 'react-icons/fa';
 
 export const Guide = () => {
   let footerBottomOn: boolean = false;
@@ -34,7 +34,6 @@ export const Guide = () => {
             title="Explore Shifter docs"
           ></ContentCard>
           <ContentCard
-            linkIcon={<FaPlay />}
             href="https://getshifter.io"
             linkText="Explore Shifter docs"
             title="Start Watching"
@@ -42,7 +41,6 @@ export const Guide = () => {
             Get the most from your Jamstack WordPress site
           </ContentCard>
           <ContentCard
-            linkIcon={<FaWrench />}
             href="https://getshifter.io"
             linkText="Explore extensions"
             title="Explore Jamstack extensions"
