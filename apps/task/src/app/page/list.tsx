@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Container,
   Dropdown,
@@ -10,28 +9,24 @@ import {
   SiteCardThumbnail,
   FormSelect,
   ProgressBar,
-  WordPressStatusBadge,
+  StatusBadge,
   Button,
 } from '@galaxy/shifter';
 import siteimg from '../img/site-a.png';
 import { Header } from '../component/header';
 import { Footer } from '../component/footer';
+import { CreateNewSiteButtons } from '../component/CreateNewSiteButtons';
+import { useIsOpenToggle } from '../hooks/useIsOpenToggle';
 import { FaSeedling, FaUser } from 'react-icons/fa';
 
 export const List = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [dropdownOpen02, setDropdownOpen02] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-  const toggle02 = () => setDropdownOpen02((prevState) => !prevState);
+	const {isOpen, toggle} = useIsOpenToggle()
+	const {
+		isOpen: isOpen02,
+		toggle: toggle02
+		} = useIsOpenToggle()
 
-  // const [dropdownOpen, setOpen] = useState({ label01: false, label02: false });
-  // const toggle = (label: string) => (e: any) => {
-  // 	if (dropdownOpen.label01 ===false) {
-  // 		setOpen({ ...dropdownOpen, [label]: true });
-  // 	} else {
-  // 		setOpen({ ...dropdownOpen, [label]: false });
-  // 	}
-  // }
+
 
   return (
     <>
@@ -67,16 +62,72 @@ export const List = () => {
               ]}
             />
           </div>
-          <div className="create-btn">
-            <Dropdown isOpen={dropdownOpen} toggle={toggle} size="sm">
-              <DropdownToggle caret color="primary">
-                +　Create a new site
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Shifter Static</DropdownItem>
-                <DropdownItem>Shifter Headless</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+          <CreateNewSiteButtons></CreateNewSiteButtons>
+        </div>
+
+        <div className="shifter-dashboard-main">
+          <ProgressBar className="" max={100} min={1} now={20} />
+        </div>
+        <div className="sitelist row no-gutters justify-content-between shadow-sm mb-4">
+          <div className="col-lg-auto d-flex align-items-center">
+            <div>
+              <SiteCardThumbnail src={siteimg} />
+            </div>
+            <div>
+              <h2 className="sitelist-title h3 font-weight-bold">
+                <a href="" className="">
+                  site name
+                </a>
+              </h2>
+              <div className="d-flex sitelist-express">
+                <p className="mr-4">
+                  <a href="">getshifter.io</a>
+                </p>
+                <p className="sitelist-express">
+                  <span className="d-inline-block rounded-circle text-center mr-2">
+                    D
+                  </span>
+                  Team memver name
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-auto">
+            <div className="d-flex align-items-center mt-3">
+              <div className="mr-4">
+                <StatusBadge
+                  className="d-inline-block"
+                  labelPrefix="WordPress"
+                  status="running"
+                />
+              </div>
+              <div className="mr-4">
+                <>
+                  <Button bordered outline rounded smaller>
+                    Manage Site
+                  </Button>
+                </>
+              </div>
+              <div className="mr-4 switch-btn">
+							<Dropdown isOpen={isOpen} toggle={toggle} size="sm">
+                  <DropdownToggle caret color="white" className="btn-switch">
+                    ●●●
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem className="btn-start">
+                      <span className="d-block position-relative">
+                        Start WordPerss
+                      </span>
+                    </DropdownItem>
+                    <DropdownItem className="btn-restart">
+                      <span className="d-block position-relative">
+                        Restart WordPerss
+                      </span>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -90,14 +141,22 @@ export const List = () => {
             </div>
             <div>
               <h2 className="sitelist-title h3 font-weight-bold">
-                <a href="" className="">site name</a>
+                <a href="" className="">
+                  site name
+                </a>
+                <span className="d-inline-block ml-2 pt-2 pr-2 pb-2 pl-2 rounded">
+                  Traial
+                </span>
               </h2>
               <div className="d-flex sitelist-express">
                 <p className="mr-4">
                   <a href="">getshifter.io</a>
                 </p>
                 <p className="sitelist-express">
-                  <span className="d-inline-block rounded-circle text-center mr-2">D</span>Team memver name
+                  <span className="d-inline-block rounded-circle text-center mr-2">
+                    D
+                  </span>
+                  Team memver name
                 </p>
               </div>
             </div>
@@ -105,7 +164,11 @@ export const List = () => {
           <div className="col-lg-auto">
             <div className="d-flex align-items-center mt-3">
               <div className="mr-4">
-                <WordPressStatusBadge className="" status="running" />
+                <StatusBadge
+                  className="d-inline-block"
+                  labelPrefix="WordPress"
+                  status="running"
+                />
               </div>
               <div className="mr-4">
                 <>
@@ -115,70 +178,29 @@ export const List = () => {
                 </>
               </div>
               <div className="mr-4 switch-btn">
-                <Dropdown isOpen={dropdownOpen02} toggle={toggle02} size="sm">
+                <Dropdown isOpen={isOpen02} toggle={toggle02} size="sm">
                   <DropdownToggle caret color="white" className="btn-switch">
                     ●●●
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem className="btn-start"><span className="d-block position-relative">Start WordPerss</span></DropdownItem>
-                    <DropdownItem className="btn-restart"><span className="d-block position-relative">Restart WordPerss</span></DropdownItem>
+                    <DropdownItem className="btn-start">
+                      <span className="d-block position-relative">
+                        Start WordPerss
+                      </span>
+                    </DropdownItem>
+                    <DropdownItem className="btn-restart">
+                      <span className="d-block position-relative">
+                        Restart WordPerss
+                      </span>
+                    </DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </div>
             </div>
           </div>
-				</div>
-				
-				<div className="shifter-dashboard-main">
-          <ProgressBar className="" max={100} min={1} now={20} />
         </div>
-        <div className="sitelist row no-gutters justify-content-between shadow-sm mb-4">
-          <div className="col-lg-auto d-flex align-items-center">
-            <div>
-              <SiteCardThumbnail src={siteimg} />
-            </div>
-            <div>
-              <h2 className="sitelist-title h3 font-weight-bold">
-                <a href="" className="">site name</a><span className="d-inline-block ml-2 pt-2 pr-2 pb-2 pl-2 rounded">Traial</span>
-              </h2>
-              <div className="d-flex sitelist-express">
-                <p className="mr-4">
-                  <a href="">getshifter.io</a>
-                </p>
-                <p className="sitelist-express">
-                  <span className="d-inline-block rounded-circle text-center mr-2">D</span>Team memver name
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-auto">
-            <div className="d-flex align-items-center mt-3">
-              <div className="mr-4">
-                <WordPressStatusBadge className="" status="running" />
-              </div>
-              <div className="mr-4">
-                <>
-                  <Button bordered outline rounded smaller>
-                    Manage Site
-                  </Button>
-                </>
-              </div>
-              <div className="mr-4 switch-btn">
-                <Dropdown isOpen={dropdownOpen02} toggle={toggle02} size="sm">
-                  <DropdownToggle caret color="white" className="btn-switch">
-                    ●●●
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem className="btn-start"><span className="d-block position-relative">Start WordPerss</span></DropdownItem>
-                    <DropdownItem className="btn-restart"><span className="d-block position-relative">Restart WordPerss</span></DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </div>
-            </div>
-          </div>
-				</div>
 
-				<div className="shifter-dashboard-main">
+        <div className="shifter-dashboard-main">
           <ProgressBar className="" max={100} min={1} now={20} />
         </div>
         <div className="sitelist row no-gutters justify-content-between shadow-sm mb-4">
@@ -188,14 +210,22 @@ export const List = () => {
             </div>
             <div>
               <h2 className="sitelist-title h3 font-weight-bold">
-                <a href="" className="">site name</a><span className="d-inline-block ml-2 pt-2 pr-2 pb-2 pl-2 rounded">Traial</span>
+                <a href="" className="">
+                  site name
+                </a>
+                <span className="d-inline-block ml-2 pt-2 pr-2 pb-2 pl-2 rounded">
+                  Traial
+                </span>
               </h2>
               <div className="d-flex sitelist-express">
                 <p className="mr-4">
                   <a href="">getshifter.io</a>
                 </p>
                 <p className="sitelist-express">
-                  <span className="d-inline-block rounded-circle text-center mr-2">D</span>Team memver name
+                  <span className="d-inline-block rounded-circle text-center mr-2">
+                    D
+                  </span>
+                  Team memver name
                 </p>
               </div>
             </div>
@@ -211,8 +241,7 @@ export const List = () => {
               </div>
             </div>
           </div>
-				</div>
-
+        </div>
       </Container>
       <Footer></Footer>
     </>
