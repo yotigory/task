@@ -15,3 +15,38 @@
 	letter-spacing: 1px;
 	font-weight: 600;
 }
+/* guide
+-----------------------------------------*/
+.guide-list-title{
+	line-height: 1.25!important;
+	font-size: 1.875rem!important;
+	font-weight: normal;
+}
+.guide-list-excerpt{
+	font-size: 1.125rem!important;
+}
+.popular-item .guide-list-item{
+	padding-bottom: 84px;
+}
+.popular-item .guide-list-title {
+	font-size: 1.375rem!important;
+	font-weight: bold;
+}
+.popular-item .guide-list-anchor {
+	left: 24px;
+	bottom: 24px;
+	z-index: 1;
+}
+.popular-questions .guide-list-title{
+	color: #FFF;
+}
+.popular-questions .guide-list-excerpt{
+	color: var(--primary-200);
+}
+.popular-questions svg{
+	margin-left: 10px;
+}
+.popular-questions .btn {
+	color: var(--primary-500) !important;
+  background-color: var(--primary-yiq);
+}

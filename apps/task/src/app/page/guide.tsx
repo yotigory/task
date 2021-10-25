@@ -1,18 +1,20 @@
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col,} from 'reactstrap';
 import {
   ContentHeader,
   ContentCardColumn,
   ContentCard,
-  AuthFormHeader,
+  Button,
   ImageShifterLogo,
   Checkbox,
 } from '@galaxy/shifter';
-import logo from '../img/guide-banner.png';
+import titleimg from '../img/guide-banner.png';
+import bgimg from '../img/bg.png';
 import { Header } from '../component/header';
 import { Footer } from '../component/footer';
+import { FaPlay, FaWrench,FaComment } from 'react-icons/fa';
 
 export const Guide = () => {
-	let footerBottomOn:boolean = false;
+  let footerBottomOn: boolean = false;
   return (
     <>
       <Header></Header>
@@ -21,17 +23,18 @@ export const Guide = () => {
           alt="Introducing PHP Error Logs"
           height="180"
           href="#"
-          src={logo}
+          src={titleimg}
           title="Guides"
           width="1134"
         />
-				<ContentCardColumn column={3} title="">
+        <ContentCardColumn column={3} title="">
           <ContentCard
             href="https://getshifter.io"
             linkText="Explore Shifter docs"
             title="Explore Shifter docs"
           ></ContentCard>
           <ContentCard
+            linkIcon={<FaPlay />}
             href="https://getshifter.io"
             linkText="Explore Shifter docs"
             title="Start Watching"
@@ -39,6 +42,7 @@ export const Guide = () => {
             Get the most from your Jamstack WordPress site
           </ContentCard>
           <ContentCard
+            linkIcon={<FaWrench />}
             href="https://getshifter.io"
             linkText="Explore extensions"
             title="Explore Jamstack extensions"
@@ -46,87 +50,109 @@ export const Guide = () => {
             Get the most from your Jamstack WordPress site
           </ContentCard>
         </ContentCardColumn>
-				<div className="mt-5 mb-3">
-        <ContentCardColumn column={3} title="Popular articles">
-          <ContentCard
-            categories={[
-              {
-                name: 'Developers',
-              },
-              {
-                name: 'Domain',
-              },
-            ]}
-            href="https://getshifter.io"
-            linkText="Read this article"
-            title="Custom domains on Shifter"
-          >
-            This article contains step by step guide for adding and assigning your custom domain to your Shifter site.
-          </ContentCard>
-          <ContentCard
-            categories={[
-              {
-                name: 'Developers',
-              },
-              {
-                name: 'Domain',
-              },
-            ]}
-            href="https://getshifter.io"
-            linkText="Read this article"
-            title="Custom domains on Shifter"
-          >
-            This article contains step by step guide for adding and assigning your custom domain to your Shifter site.
-          </ContentCard>
-          <ContentCard
-            categories={[
-              {
-                name: 'Developers',
-              },
-              {
-                name: 'Domain',
-              },
-            ]}
-            href="https://getshifter.io"
-            linkText="Read this article"
-            title="Custom domains on Shifter"
-          >
-            This article contains step by step guide for adding and assigning your custom domain to your Shifter site.
-          </ContentCard>
-          <ContentCard
-            categories={[
-              {
-                name: 'Developers',
-              },
-              {
-                name: 'Domain',
-              },
-            ]}
-            href="https://getshifter.io"
-            linkText="Read this article"
-            title="Custom domains on Shifter"
-          >
-            This article contains step by step guide for adding and assigning your custom domain to your Shifter site.
-          </ContentCard>
-          <ContentCard
-            categories={[
-              {
-                name: 'Developers',
-              },
-              {
-                name: 'Domain',
-              },
-            ]}
-            href="https://getshifter.io"
-            linkText="Read this article"
-            title="Read the docs"
-          >
-            content
-          </ContentCard>
-					</ContentCardColumn>
-					</div>
+
+        <h3 className="mt-5 mb-3 popular-title">Popular articles</h3>
+        <div className="row popular-articles">
+          <div className="col-md-4 mb-4">
+            <div className="shadow-sm popular-item">
+              <ContentCard
+                categories={[
+                  {
+                    link: '',
+                    name: 'Developers',
+                  },
+                  {
+                    name: 'Domain',
+                  },
+                ]}
+                href="#"
+                linkText="Read this article"
+                title="Custom domains on Shifter"
+              >
+                This article contains step by step guide for adding and
+                assigning your custom domain to your Shifter site.
+              </ContentCard>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="shadow-sm popular-item">
+              <ContentCard
+                categories={[
+                  {
+                    link: '',
+                    name: 'Developers',
+                  },
+                  {
+                    name: 'Domain',
+                  },
+                ]}
+                href="#"
+                linkText="Read this article"
+                title="Custom domains on Shifter"
+              >
+                This article contains step by step guide for adding and
+                assigning your custom domain to your Shifter site.
+              </ContentCard>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="shadow-sm popular-item">
+              <ContentCard
+                categories={[
+                  {
+                    link: '',
+                    name: 'Developers',
+                  },
+                  {
+                    name: 'Domain',
+                  },
+                ]}
+                href="#"
+                linkText="Read this article"
+                title="Custom domains on Shifter"
+              >
+                This article contains step by step guide for adding and
+                assigning your custom domain to your Shifter site.
+              </ContentCard>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="shadow-sm popular-item">
+              <ContentCard
+                categories={[
+                  {
+                    link: '',
+                    name: 'Developers',
+                  },
+                  {
+                    name: 'Domain',
+                  },
+                ]}
+                href="#"
+                linkText="Read this article"
+                title="Custom domains on Shifter"
+              >
+                This article contains step by step guide for adding and
+                assigning your custom domain to your Shifter site.
+              </ContentCard>
+            </div>
+          </div>
+					<div className="col-md-4 mb-4 d-flex align-items-center" style={{ backgroundImage: `url(${bgimg})` }}>
+	            <div className="popular-item popular-questions">
+              <h3 className="mb-2 guide-list-title font-weight-bold">
+                Questions?
+              </h3>
+              <p className="mb-4 guide-list-excerpt">
+                Our team is happy to help
+              </p>
+              <Button bordered outline smaller>
+                Contact Support <FaComment />
+              </Button>
+            </div>
+          </div>
+        </div>
       </Container>
-			<Footer></Footer>
+      <Footer></Footer>
     </>
   );
 };
