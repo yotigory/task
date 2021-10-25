@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   Container,
-  ButtonDropdown,
+  Dropdown,
   DropdownToggle,
   DropdownItem,
   DropdownMenu,
@@ -9,8 +9,9 @@ import {
 import {
   SiteCardThumbnail,
   FormSelect,
-	ProgressBar,
-	WordPressStatusBadge,
+  ProgressBar,
+  WordPressStatusBadge,
+  Button,
 } from '@galaxy/shifter';
 import siteimg from '../img/site-a.png';
 import { Header } from '../component/header';
@@ -18,14 +19,19 @@ import { Footer } from '../component/footer';
 import { FaSeedling, FaUser } from 'react-icons/fa';
 
 export const List = () => {
-	const [dropdownOpen, setOpen] = useState({label01:false,label02:false});
-	const toggle = (label: string) => (e: any) => {
-		if (dropdownOpen.label01 ===false) {
-			setOpen({ ...dropdownOpen, [label]: true });
-		} else {
-			setOpen({ ...dropdownOpen, [label]: false });
-		}
-	}
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen02, setDropdownOpen02] = useState(false);
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const toggle02 = () => setDropdownOpen02((prevState) => !prevState);
+
+  // const [dropdownOpen, setOpen] = useState({ label01: false, label02: false });
+  // const toggle = (label: string) => (e: any) => {
+  // 	if (dropdownOpen.label01 ===false) {
+  // 		setOpen({ ...dropdownOpen, [label]: true });
+  // 	} else {
+  // 		setOpen({ ...dropdownOpen, [label]: false });
+  // 	}
+  // }
 
   return (
     <>
@@ -61,65 +67,152 @@ export const List = () => {
               ]}
             />
           </div>
-          <div>
-            <ButtonDropdown isOpen={dropdownOpen.label01} toggle={toggle('label01')}>
+          <div className="create-btn">
+            <Dropdown isOpen={dropdownOpen} toggle={toggle} size="sm">
               <DropdownToggle caret color="primary">
-                + Button Dropdown
+                +　Create a new site
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem>Shifter Static</DropdownItem>
                 <DropdownItem>Shifter Headless</DropdownItem>
               </DropdownMenu>
-            </ButtonDropdown>
+            </Dropdown>
           </div>
         </div>
 
         <div className="shifter-dashboard-main">
           <ProgressBar className="" max={100} min={1} now={20} />
         </div>
-        <div className="d-flex justify-content-between shadow-sm">
-          <div className="d-flex align-items-center">
+        <div className="sitelist row no-gutters justify-content-between shadow-sm mb-4">
+          <div className="col-lg-auto d-flex align-items-center">
             <div>
               <SiteCardThumbnail src={siteimg} />
             </div>
             <div>
-              <h2 className="h3">
-                site name<span className="">Traial</span>
+              <h2 className="sitelist-title h3 font-weight-bold">
+                <a href="" className="">site name</a>
               </h2>
-              <div className="d-flex">
-                <p>
+              <div className="d-flex sitelist-express">
+                <p className="mr-4">
                   <a href="">getshifter.io</a>
                 </p>
-                <p>
-                  <span>D</span>Team memver name
+                <p className="sitelist-express">
+                  <span className="d-inline-block rounded-circle text-center mr-2">D</span>Team memver name
                 </p>
               </div>
             </div>
           </div>
-          <div>
-            <div className="d-flex">
-              <div>
+          <div className="col-lg-auto">
+            <div className="d-flex align-items-center mt-3">
+              <div className="mr-4">
                 <WordPressStatusBadge className="" status="running" />
               </div>
-              <div>
-                <button type="button" className="btn btn-outline-primary">
-                  Manage Site
-                </button>
-							</div>
-							<div>
-							<ButtonDropdown isOpen={dropdownOpen.label02} toggle={toggle('label02')}>
-              <DropdownToggle caret color="primary">
-                + Button Dropdown
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Shifter Static</DropdownItem>
-                <DropdownItem>Shifter Headless</DropdownItem>
-              </DropdownMenu>
-            </ButtonDropdown>
-							</div>
+              <div className="mr-4">
+                <>
+                  <Button bordered outline rounded smaller>
+                    Manage Site
+                  </Button>
+                </>
+              </div>
+              <div className="mr-4 switch-btn">
+                <Dropdown isOpen={dropdownOpen02} toggle={toggle02} size="sm">
+                  <DropdownToggle caret color="white" className="btn-switch">
+                    ●●●
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem className="btn-start"><span className="d-block position-relative">Start WordPerss</span></DropdownItem>
+                    <DropdownItem className="btn-restart"><span className="d-block position-relative">Restart WordPerss</span></DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
             </div>
           </div>
+				</div>
+				
+				<div className="shifter-dashboard-main">
+          <ProgressBar className="" max={100} min={1} now={20} />
         </div>
+        <div className="sitelist row no-gutters justify-content-between shadow-sm mb-4">
+          <div className="col-lg-auto d-flex align-items-center">
+            <div>
+              <SiteCardThumbnail src={siteimg} />
+            </div>
+            <div>
+              <h2 className="sitelist-title h3 font-weight-bold">
+                <a href="" className="">site name</a><span className="d-inline-block ml-2 pt-2 pr-2 pb-2 pl-2 rounded">Traial</span>
+              </h2>
+              <div className="d-flex sitelist-express">
+                <p className="mr-4">
+                  <a href="">getshifter.io</a>
+                </p>
+                <p className="sitelist-express">
+                  <span className="d-inline-block rounded-circle text-center mr-2">D</span>Team memver name
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-auto">
+            <div className="d-flex align-items-center mt-3">
+              <div className="mr-4">
+                <WordPressStatusBadge className="" status="running" />
+              </div>
+              <div className="mr-4">
+                <>
+                  <Button bordered outline rounded smaller>
+                    Manage Site
+                  </Button>
+                </>
+              </div>
+              <div className="mr-4 switch-btn">
+                <Dropdown isOpen={dropdownOpen02} toggle={toggle02} size="sm">
+                  <DropdownToggle caret color="white" className="btn-switch">
+                    ●●●
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem className="btn-start"><span className="d-block position-relative">Start WordPerss</span></DropdownItem>
+                    <DropdownItem className="btn-restart"><span className="d-block position-relative">Restart WordPerss</span></DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+            </div>
+          </div>
+				</div>
+
+				<div className="shifter-dashboard-main">
+          <ProgressBar className="" max={100} min={1} now={20} />
+        </div>
+        <div className="sitelist row no-gutters justify-content-between shadow-sm mb-4">
+          <div className="col-lg-auto d-flex align-items-center">
+            <div>
+              <SiteCardThumbnail src={siteimg} />
+            </div>
+            <div>
+              <h2 className="sitelist-title h3 font-weight-bold">
+                <a href="" className="">site name</a><span className="d-inline-block ml-2 pt-2 pr-2 pb-2 pl-2 rounded">Traial</span>
+              </h2>
+              <div className="d-flex sitelist-express">
+                <p className="mr-4">
+                  <a href="">getshifter.io</a>
+                </p>
+                <p className="sitelist-express">
+                  <span className="d-inline-block rounded-circle text-center mr-2">D</span>Team memver name
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-auto">
+            <div className="d-flex align-items-center mt-3">
+              <div className="mr-4">
+                <>
+                  <Button bordered outline rounded smaller>
+                    Manage Site
+                  </Button>
+                </>
+              </div>
+            </div>
+          </div>
+				</div>
+
       </Container>
       <Footer></Footer>
     </>
