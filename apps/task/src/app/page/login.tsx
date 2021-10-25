@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col, } from 'reactstrap';
 import { FaUser, FaLock } from 'react-icons/fa';
 import {
   Layouts,
@@ -7,7 +7,8 @@ import {
   FormField,
   AuthFormHeader,
   ImageShifterLogo,
-  Checkbox,
+	Checkbox,
+	Button
 } from '@galaxy/shifter';
 import { Footer } from '../component/footer';
 
@@ -86,7 +87,7 @@ export const Login = () => {
                 Customize Shifter settings for up to 70% faster build times.
               </p>
               <p className="font-weight-bold">
-                <a className="text-primary" href="">
+                <a href="">
                   Learn about Shifter Media CDN
                 </a>
               </p>
