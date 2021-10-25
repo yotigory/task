@@ -60,10 +60,10 @@ export const Login = () => {
 									value={ check }
 								/>
                 <Button
-                  className="mt-4 mb-5"
+                  className="mt-4 mb-5 btn-primary"
                   block
                   fontWeight="bold"
-                  textAlign="center"
+									textAlign="center"
                 >
                   Log in
 								</Button>
@@ -79,7 +79,7 @@ export const Login = () => {
                 }}
                 width="153px"
               />
-              <h2 className="text-primary font-weight-bold">
+              <h2 className="login-information-title text-primary">
                 Faster Build Times
               </h2>
               <p className="mt-4 mb-5 h5">
