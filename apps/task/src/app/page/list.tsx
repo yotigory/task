@@ -20,11 +20,11 @@ import { useIsOpenToggle } from '../hooks/useIsOpenToggle';
 import { FaSeedling, FaUser } from 'react-icons/fa';
 
 export const List = () => {
-	const {isOpen, toggle} = useIsOpenToggle()
+	const {isOpen, toggle} = useIsOpenToggle(false)
 	const {
 		isOpen: isOpen02,
 		toggle: toggle02
-		} = useIsOpenToggle()
+		} = useIsOpenToggle(false)
 
 
 

@@ -23,7 +23,7 @@ import { AiFillThunderbolt } from 'react-icons/ai';
 export const Set = () => {
   const { isOpen, toggle } = useIsOpenToggle(true);
   const { isOpen: isOpen02, toggle: toggle02 } = useIsOpenToggle(true);
-  const { isOpen: isOpen03, toggle: toggle03 } = useIsOpenToggle();
+  const { isOpen: isOpen03, toggle: toggle03 } = useIsOpenToggle(false);
   const { isOpen: isOpen04, toggle: toggle04 } = useIsOpenToggle(true);
   const { isOpen: isOpen05, toggle: toggle05 } = useIsOpenToggle(true);
   const { isOpen: isOpen06, toggle: toggle06 } = useIsOpenToggle(true);
@@ -247,7 +247,7 @@ export const Set = () => {
                     >
                       Home
                     </SidebarMenuItem>
-                    <SidebarMenuItem
+										<SidebarMenuItem
                       icon={<AiFillThunderbolt className="d-block" />}
                       submenus={[
                         {
