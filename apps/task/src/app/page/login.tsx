@@ -30,13 +30,14 @@ export const Login = () => {
       e.preventDefault();
       setStatus('inprogress');
       try {
-        await handleSignIn(username, password, dispatchAuthStateChangeEvent);
+        // await handleSignIn(username, password, dispatchAuthStateChangeEvent);
       } catch (e) {
-        setErrorMessage(e.message);
+        // setErrorMessage(e.message);
         setStatus('failure');
       }
     },
-    [username, password, setStatus, setErrorMessage]
+		[setStatus]
+		// [username, password, setStatus, setErrorMessage]
   );
 
   return (
