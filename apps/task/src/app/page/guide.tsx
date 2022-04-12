@@ -4,8 +4,6 @@ import {
   ContentCardColumn,
   ContentCard,
   Button,
-  ImageShifterLogo,
-  Checkbox,
 } from '@galaxy/shifter';
 import titleimg from '../img/guide-banner.png';
 import bgimg from '../img/bg.png';
@@ -14,36 +12,35 @@ import { Footer } from '../component/footer';
 import { FaComment } from 'react-icons/fa';
 
 export const Guide = () => {
-  let footerBottomOn: boolean = false;
   return (
     <>
       <Header></Header>
       <Container className="themed-container mt-3 mb-7">
         <ContentHeader
-          alt="Introducing PHP Error Logs"
+          alt="Test Page Title"
           height="180"
           href="#"
           src={titleimg}
-          title="Guides"
+          title="Guide これはテストページです。"
           width="1134"
         />
         <ContentCardColumn column={3} title="">
           <ContentCard
-            href="https://getshifter.io"
-            linkText="Explore Shifter docs"
-            title="Explore Shifter docs"
+            href="/set/"
+            linkText="Settings Page"
+            title="Settings Page"
           ></ContentCard>
           <ContentCard
-            href="https://getshifter.io"
-            linkText="Explore Shifter docs"
-            title="Start Watching"
+            href="=/list/"
+            linkText="List Page"
+            title="List Page"
           >
             Get the most from your Jamstack WordPress site
           </ContentCard>
           <ContentCard
-            href="https://getshifter.io"
-            linkText="Explore extensions"
-            title="Explore Jamstack extensions"
+            href="/"
+            linkText="Log Out"
+            title="Log Out"
           >
             Get the most from your Jamstack WordPress site
           </ContentCard>
@@ -65,10 +62,10 @@ export const Guide = () => {
                 ]}
                 href="#"
                 linkText="Read this article"
-                title="Custom domains on Shifter"
+                title="Custom domains on AAAA"
               >
                 This article contains step by step guide for adding and
-                assigning your custom domain to your Shifter site.
+                assigning your custom domain to your test site.
               </ContentCard>
             </div>
           </div>
@@ -86,10 +83,10 @@ export const Guide = () => {
                 ]}
                 href="#"
                 linkText="Read this article"
-                title="Custom domains on Shifter"
+                title="Custom domains on AAAA"
               >
                 This article contains step by step guide for adding and
-                assigning your custom domain to your Shifter site.
+                assigning your custom domain to your test site.
               </ContentCard>
             </div>
           </div>
@@ -107,10 +104,10 @@ export const Guide = () => {
                 ]}
                 href="#"
                 linkText="Read this article"
-                title="Custom domains on Shifter"
+                title="Custom domains on AAAA"
               >
                 This article contains step by step guide for adding and
-                assigning your custom domain to your Shifter site.
+                assigning your custom domain to your test site.
               </ContentCard>
             </div>
           </div>
@@ -128,10 +125,10 @@ export const Guide = () => {
                 ]}
                 href="#"
                 linkText="Read this article"
-                title="Custom domains on Shifter"
+                title="Custom domains on AAAA"
               >
                 This article contains step by step guide for adding and
-                assigning your custom domain to your Shifter site.
+                assigning your custom domain to your test site.
               </ContentCard>
             </div>
           </div>

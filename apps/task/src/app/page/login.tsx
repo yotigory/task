@@ -88,7 +88,9 @@ export const Login = () => {
 						</div>
 					</form>
           </Col>
-          <Col lg="5" className="text-center pt-5 pb-5"></Col>
+					<Col lg="5" className="text-center pt-5 pb-5">
+						<h2 className="login-information-title text-primary">これは<br />テストページです。</h2>
+					</Col>
         </Row>
       </Container>
       <div className="fixed-bottom">

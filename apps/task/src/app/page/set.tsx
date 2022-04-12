@@ -36,7 +36,7 @@ export const Set = () => {
       <Container className="themed-container mb-7 border-top">
         <div className="row">
           <div className="col-lg-9 order-lg-last pt-3">
-            <h2 className="h3 mb-3">Site Settings</h2>
+            <h2 className="h3 mb-3">Settings これはテストページです。</h2>
             <List rounded className="mb-3">
               <ListItem
                 alignItem="center"
@@ -240,63 +240,24 @@ export const Set = () => {
                       submenus={[
                         {
                           label: 'Sub item',
-                          to: '#',
+                          to: '/guide/',
                         },
                       ]}
-                      to="#"
+                      to="/guide/"
                     >
-                      Home
+                      Guide
                     </SidebarMenuItem>
 										<SidebarMenuItem
                       icon={<AiFillThunderbolt className="d-block" />}
                       submenus={[
                         {
                           label: 'Sub item',
-                          to: '#',
+                          to: '/list/',
                         },
                       ]}
-                      to="#"
+                      to="/list/"
                     >
-                      Live
-                    </SidebarMenuItem>
-                    <SidebarMenuItem
-                      active
-                      icon={<FaCodeBranch className="d-block" />}
-                      shouldShowSubmenus
-                      submenus={[
-                        {
-                          label: 'Sub item',
-                          to: '#',
-                        },
-                      ]}
-                      to="#"
-                    >
-                      Staging
-                    </SidebarMenuItem>
-                    <SidebarMenuItem
-                      icon={<FaCode className="d-block" />}
-                      submenus={[
-                        {
-                          label: 'Sub item',
-                          to: '#',
-                        },
-                      ]}
-                      to="#"
-                    >
-                      Dev
-                    </SidebarMenuItem>
-                    <SidebarMenuItem
-                      deactive
-                      icon={<FaUserFriends className="d-block" />}
-                      submenus={[
-                        {
-                          label: 'Sub',
-                          to: '#',
-                        },
-                      ]}
-                      to="#"
-                    >
-                      Team
+                      List
                     </SidebarMenuItem>
                     <SidebarMenuItem
                       active
@@ -304,10 +265,10 @@ export const Set = () => {
                       submenus={[
                         {
                           label: 'Sub item',
-                          to: '#',
+                          to: '/set/',
                         },
                       ]}
-                      to="#"
+                      to="/set/"
                     >
                       Settings
                     </SidebarMenuItem>

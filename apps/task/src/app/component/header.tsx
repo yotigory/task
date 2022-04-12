@@ -1,5 +1,5 @@
 import { Container } from 'reactstrap';
-import { SearchForm, Navbar, NavbarBrand,Nav,NavLinkItem,NavbarDropdown,NavbarDropdownItem } from '@galaxy/shifter';
+import { SearchForm, Navbar, Nav,NavLinkItem,NavbarDropdown,NavbarDropdownItem } from '@galaxy/shifter';
 import { FaUser, FaSignOutAlt } from 'react-icons/fa';
 
 export const Header = () => {
@@ -7,17 +7,14 @@ export const Header = () => {
     <header className="mt-2">
       <Container className="themed-container" fluid="lg">
 			<Navbar>
-      <NavbarBrand href="/" name="shifter" />
       <SearchForm
         onChange={() => undefined}
         onSubmit={(e) => e.preventDefault()}
       />
       <Nav>
-        <NavLinkItem active to="#">
-          Sites
-        </NavLinkItem>
-        <NavLinkItem to="#">Teams</NavLinkItem>
-        <NavLinkItem to="#">Guides</NavLinkItem>
+			  <NavLinkItem to="/Nav/">Nav</NavLinkItem>
+			  <NavLinkItem active to="/Nav/">Nav</NavLinkItem>
+        <NavLinkItem to="/Nav/">Nav</NavLinkItem>
         <NavbarDropdown
           avatar={{
             size: 32,
